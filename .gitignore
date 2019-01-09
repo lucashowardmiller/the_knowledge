@@ -1,3 +1,4 @@
 geckodriver.log
+# Ignore pycharm stuff
 .idea
 venv
