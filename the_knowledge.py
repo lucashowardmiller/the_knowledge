@@ -38,12 +38,6 @@ def main():
     print(return_url)
 
 
-def google_search_url():
-    with urllib.request.urlopen('http://python.org/') as response:
-        html = response.read()
-        print(html)
-
-
 def get_knowledge_panel(knowledge_panel_search: str) -> str:
     options = Options()
     options.headless = True
