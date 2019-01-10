@@ -1,9 +1,10 @@
 import time
-import urllib.request
 import urllib.parse
+import urllib.request
+
 from selenium import webdriver
-import re
 from selenium.webdriver.firefox.options import Options
+
 
 GOOGLE_PREFIX = 'https://www.google.com/search?q='
 KP_ONLY = '&kponly'
@@ -18,16 +19,13 @@ main_art = \
 
 
 def main():
-    print('Enter a search:', end=' ')
-    subject_search = input()
-    print('Use the knowledge panel from:', end=' ')
-    knowledge_panel_search = input()
-    print('Hide search (y/n):', end=' ')
-    hide_search_entry = input()
-    if hide_search_entry.lower() == 'y':
-        hide_search = True
-    else:
-        hide_search = False
+    # grab input
+    subject_search = input('Enter a search: ')
+    knowledge_panel_search = input('Use the knowledge panel from: ')
+    hide_search_entry = input('Hide search (y/n): ')
+    
+    # check if hide_search_entry is affirmative
+    hide_search = hide_search_entry.lower() == 'y'
 
     if hide_search:
         return_url = GOOGLE_PREFIX + whitespace_to_plus(subject_search)\
@@ -65,13 +63,9 @@ def get_knowledge_panel(knowledge_panel_search: str) -> str:
 
 def whitespace_to_plus(search: str) -> str:
     """Handles making most strings safe to put into urls"""
-    whitespace_re = re.compile('\s')
-    return re.sub(whitespace_re, '+', search)
+    return '+'.join(search.split())
 
 
 if __name__ == '__main__':
     print(main_art)
     main()
-
-
-
