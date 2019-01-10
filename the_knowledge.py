@@ -1,9 +1,8 @@
 import time
-import urllib.parse
-import urllib.request
 
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+
 
 
 GOOGLE_PREFIX = 'https://www.google.com/search?q='
@@ -40,20 +39,20 @@ def get_knowledge_panel(knowledge_panel_search: str) -> str:
     options = Options()
     options.headless = True
     driver = webdriver.Firefox(options=options)
+    driver.implicitly_wait(10)
+
     driver.get("https://google.com")
-    search_box = driver.find_element_by_xpath('/html/body/div/div[3]/form/div[2]/div/div[1]/div/div[1]/input')
+    search_box =  driver.find_element_by_xpath('/html/body/div/div[3]/form/div[2]/div/div[1]/div/div[1]/input')
     search_box.click()
     search_box.send_keys(knowledge_panel_search)
     search_box.send_keys(u'\ue007')
 
-    time.sleep(2)
     kp_link = driver.find_element_by_xpath('/html/body/div[6]/div[3]/div[10]/div[1]/div[3]/div/div/div[1]/div[1]/div/div[1]/div[2]/div[2]/div/div[1]/div/div/div[1]/kno-share-button/div/span')
     kp_link.click()
     short_kp = driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/div[2]/div[2]/div/div/g-text-field/input')
     short_kp_link = short_kp.get_attribute('value')
 
     driver.get(short_kp_link)
-    time.sleep(2)
     full_kp_link = driver.current_url
     driver.quit()
     url_split = full_kp_link.split('?')

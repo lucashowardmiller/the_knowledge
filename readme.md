@@ -15,4 +15,3 @@ Program needs gecko driver for selenium too.
 1. The wrong kind of knowledge panel for the second entry
 1. Your search entry contains non-letter characters, as more url handeling is still being developed
 1. looking at it funny
-1. Longer than usual page load times, as this does not utilize such features in selenium  
