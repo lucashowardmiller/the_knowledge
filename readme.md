@@ -11,5 +11,5 @@ Dependencies are listed in requirements.txt.
 Program needs gecko driver for selenium too.
 
 ##### Reasons it's breaking
-1. Your search entry contains non-letter characters, as more url handeling is still being developed
+1. Your search entry contains non-letter characters, as more url handling is still being developed
 1. looking at it funny
