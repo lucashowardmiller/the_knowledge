@@ -24,11 +24,9 @@ def main():
     hide_search = hide_search_entry.lower() == 'y'
 
     if hide_search:
-        return_url = GOOGLE_PREFIX + whitespace_to_plus(subject_search)\
-                     + '&' + get_knowledge_panel(knowledge_panel_search) + '&' + KP_ONLY
+        return_url = f'{GOOGLE_PREFIX}{whitespace_to_plus(subject_search)}&{get_knowledge_panel(knowledge_panel_search)}&{KP_ONLY}'
     else:
-        return_url = GOOGLE_PREFIX + whitespace_to_plus(subject_search) + '&' + get_knowledge_panel(
-            knowledge_panel_search)
+        return_url = f'{GOOGLE_PREFIX}{whitespace_to_plus(subject_search)}&{get_knowledge_panel(knowledge_panel_search)}'
     print(return_url)
 
 
