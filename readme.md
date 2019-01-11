@@ -1,4 +1,6 @@
-# the_knowledge
+# the_knowledge [Archive]
+
+This specific vulnerability has been fixed by google. This project is now effectively useless.
 
 Proof of concept code to exploit quirk in how google renders knowledge panels.
 Concept from https://wietzebeukema.nl/blog/spoofing-google-search-results
@@ -10,6 +12,3 @@ Concept from https://wietzebeukema.nl/blog/spoofing-google-search-results
 Dependencies are listed in requirements.txt.
 Program needs gecko driver for selenium too.
 
-##### Reasons it's breaking
-1. Your search entry contains non-letter characters, as more url handling is still being developed
-1. looking at it funny
